@@ -8,8 +8,7 @@ The Portfolio Validator is a Flask-based web application designed to assist user
 2. [Components](#components)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [License](#license)
+5. [Example](#example)
 
 ## Key Features
 
