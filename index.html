@@ -2,7 +2,81 @@
 <html>
 <head>
     <title>Portfolio Validator</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+
+	    body {
+	    font-family: Arial, sans-serif;
+	    text-align: center;
+	}
+	
+	form {
+	    margin: 0 auto;
+	    width: 80%;
+	    text-align: center;
+	}
+	
+	input[type="file"] {
+	    display: none;
+	}
+	
+	label {
+	    background-color: #007bff;
+	    color: #fff;
+	    padding: 10px 20px;
+	    border-radius: 5px;
+	    cursor: pointer;
+	    margin-bottom: 10px;
+	    display: inline-block;
+	}
+	
+	label:hover {
+	    background-color: #0056b3;
+	}
+	
+	input[type="submit"] {
+	    background-color: #28a745;
+	    color: #fff;
+	    border: none;
+	    padding: 10px 20px;
+	    border-radius: 5px;
+	    cursor: pointer;
+	    margin-top: 10px;
+	}
+	
+	input[type="submit"]:hover {
+	    background-color: #218838;
+	}
+	
+	.file-name {
+	    display: inline-block;
+	    margin-left: 10px;
+	}
+	
+	/* Result styles */
+	.result {
+	    margin-top: 20px;
+	    background-color: #ffffff;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	    padding: 20px;
+		text-align: left;
+		width: auto;
+		border: red 5px;
+	}
+	
+	.error-text {
+	    color: red;
+	}
+	
+	.success-text {
+	    color: green;
+	}
+	
+	/* Text box styles */
+	.hidden {
+	    display: none;
+	}
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
