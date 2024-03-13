@@ -1,0 +1,90 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        label:hover {
+            background-color: #0056b3; /* Change hover color */
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .file-name {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Validator</h1>
+    <form action="/validate" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="html_file" id="html_label">Upload HTML File</label>
+        <input type="file" name="html_file" id="html_file" accept=".html" onchange="displayFileName('html_file', 'html_label')">
+        <span class="file-name" id="html_file_name"></span>
+        <br><br>
+        <label for="css_file" id="css_label">Upload CSS File</label>
+        <input type="file" name="css_file" id="css_file" accept=".css" onchange="displayFileName('css_file', 'css_label')">
+        <span class="file-name" id="css_file_name"></span>
+        <br><br>
+        <input type="submit" value="Validate">
+    </form>
+
+    <script>
+        function validateForm() {
+            var htmlFile = document.getElementById("html_file").value;
+            var cssFile = document.getElementById("css_file").value;
+
+            if (htmlFile == "") {
+                alert("Please upload an HTML file.");
+                return false;
+            }
+
+            if (cssFile == "") {
+                alert("Please upload a CSS file.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function displayFileName(inputId, labelId) {
+            var fileInput = document.getElementById(inputId);
+            var label = document.getElementById(labelId);
+            var fileName = fileInput.files[0].name;
+            var fileNameDisplay = document.getElementById(inputId + "_name");
+            fileNameDisplay.innerHTML = fileName;
+        }
+    </script>
+</body>
+</html>
