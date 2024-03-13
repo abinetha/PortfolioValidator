@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Validator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <h1>Portfolio Validator</h1>
+    <form action="/" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="html_file" id="html_label">Upload HTML File</label>
+        <input type="file" name="html_file" id="html_file" accept=".html" onchange="displayFileName('html_file', 'html_label')">
+        <span class="file-name" id="html_file_name"></span>
+        <span class="alert" id="html_alert"></span> <!-- Placeholder for HTML file alert -->
+        <br><br>
+        <label for="css_file" id="css_label">Upload CSS File</label>
+        <input type="file" name="css_file" id="css_file" accept=".css" onchange="displayFileName('css_file', 'css_label')">
+        <span class="file-name" id="css_file_name"></span>
+        <span class="alert" id="css_alert"></span> <!-- Placeholder for CSS file alert -->
+        <br><br>
+        <input type="submit" value="Validate">
+    </form>
+
+    <div class="result">
+        {% if errors %}
+            <h2>Validation Errors:</h2>
+            <ul>
+                {% for error in errors %}
+                    <li class="error-text">{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% elif message %}
+            <h2 class="success-text">{{ message }}</h2>
+        {% endif %}
+    </div>
+
+    <script>
+	
+        // Hide the text box initially
+        //document.getElementById("text-box").classList.add("hidden");
+		
+        function validateForm() {
+            var htmlFile = document.getElementById("html_file").value;
+            var cssFile = document.getElementById("css_file").value;
+            var htmlAlert = document.getElementById("html_alert");
+            var cssAlert = document.getElementById("css_alert");
+
+            if (htmlFile == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload an HTML file.'
+                });
+                return false;
+            }
+
+            if (cssFile == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload a CSS file.'
+                });
+                return false;
+            }
+
+            // Show the text box
+            //document.getElementById("text-box").classList.remove("hidden");
+
+            return true;
+        }
+
+        function displayFileName(inputId, labelId) {
+            var fileInput = document.getElementById(inputId);
+            var label = document.getElementById(labelId);
+            var fileName = fileInput.files[0].name;
+            var fileNameDisplay = document.getElementById(inputId + "_name");
+            fileNameDisplay.innerHTML = fileName;
+        }
+
+    </script>
+</body>
+</html>
