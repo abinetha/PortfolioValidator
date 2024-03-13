@@ -37,7 +37,7 @@ The Portfolio Validator consists of the following components:
 **Navigate to the project directory**
 
 ```bash
-cd portfolio-validator
+cd PortfolioValidator
 ```
 **Create a virtual environment (optional but recommended)**
 
