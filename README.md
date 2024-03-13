@@ -1,28 +1,22 @@
 # Portfolio Validator
 
-## Project Description
-
 The Portfolio Validator is a Flask-based web application designed to assist users in validating the structure and content of their portfolio websites' HTML and CSS files. It provides a user-friendly interface for uploading files, performing validation checks, and viewing validation results. The application employs a backend validation mechanism to ensure that uploaded files meet specific criteria, providing users with feedback on any errors encountered.
-
-### Key Features
-
-- **HTML/CSS Validation:** The application validates the uploaded HTML and CSS files to ensure they adhere to predefined criteria, such as the presence of required sections and elements.
-- **User-Friendly Interface:** The interface allows users to easily upload their files, initiate validation checks, and view the validation results in a clear and concise manner.
-- **Feedback Mechanism:** Validation results are presented to users, highlighting any errors found in the uploaded files and providing guidance on resolving them.
-- **Customizable Criteria:** Users can customize the validation criteria based on their specific requirements, allowing for flexibility in the validation process.
 
 ## Table of Contents
 
-1. [Project Description](#project-description)
-2. [Key Features](#key-features)
+1. [Key Features](#key-features)
+2. [Components](#components)
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Contributing](#contributing)
 6. [License](#license)
 
-## Overview
+## Key Features
 
-The Portfolio Validator is a web application built using Flask, designed to help users validate the structure and content of their portfolio websites' HTML and CSS files. This README provides detailed instructions on how to set up, use, and contribute to the project.
+- **HTML/CSS Validation:** The application validates the uploaded HTML and CSS files to ensure they adhere to predefined criteria, such as the presence of required sections and elements.
+- **User-Friendly Interface:** The interface allows users to easily upload their files, initiate validation checks, and view the validation results in a clear and concise manner.
+- **Feedback Mechanism:** Validation results are presented to users, highlighting any errors found in the uploaded files and providing guidance on resolving them.
+- **Customizable Criteria:** Users can customize the validation criteria based on their specific requirements, allowing for flexibility in the validation process.
 
 ## Components
 
@@ -58,7 +52,7 @@ python3 -m venv venv
 ```bash
 venv\Scripts\activate
 ```
-For macOS/Linux:
+**For macOS/Linux:**
 
 ```bash
 source venv/bin/activate
@@ -68,23 +62,24 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
 ## Usage
 
-Follow these steps to use the Portfolio Validator:
+**Follow these steps to use the Portfolio Validator:**
 
-Run the Flask application
+1. Run the Flask application
 
 ```bash
 python app.py
 ```
-Access the application through a web browser by navigating to http://127.0.0.1:5000/.
+2. Access the application through a web browser by navigating to http://127.0.0.1:5000/.
 
-Upload your HTML and CSS files using the provided form. The form can be found within the test_portfolio folder.
+3. Upload your HTML and CSS files using the provided form. The HTML and CSS files for testing can be found within the test_portfolio folder.
 
-Click the "Validate" button to initiate the validation process.
+4. Click the "Validate" button to initiate the validation process.
 
-View the validation results, which will indicate any errors found in your uploaded files.
+5. View the validation results, which will indicate any errors found in your uploaded files.
 
-Example
+## Example
 
 An example usage scenario is provided in the Flask application. You can follow the steps outlined in the Usage section to upload your HTML and CSS files and validate them.
